@@ -6,6 +6,7 @@
 	import { Input } from '$lib/components/ui/input';
 	// import { animeId, toastState } from '/$components/episodes';
 	import * as Card from '$lib/components/ui/card';
+	import Icon from '@iconify/svelte';
 
 	export let data: PageData;
 
@@ -118,12 +119,12 @@
 				<Card.Root
 					class="flex flex-shrink-0 basis-[16rem] snap-start scroll-ml-8 flex-col first:ml-6 last:mr-6 lg:first:ml-8 lg:last:mr-8"
 				>
-					<Card.Header class="p-2 pb-0">
+					<Card.Header class="p-2 pb-0 relative group">
 						<img
 							src={anime.coverImage}
 							alt="Anime cover art"
 							loading={i >= 6 ? 'lazy' : 'eager'}
-							class="h-96 w-full rounded-md object-cover"
+							class="h-96 w-full rounded-md object-cover transition-all group-hover:transition group-hover:ease-in-out group-hover:duration-300 group-hover:blur-sm group-hover:cursor-pointer"
 							data-fallback={anime.fallback}
 							on:error={(event) => {
 								// @ts-ignore
@@ -132,6 +133,10 @@
 									event.target.src = anime.fallback;
 								}
 							}}
+						/>
+						<Icon
+							class="absolute m-auto left-0 right-0 top-[45%] text-6xl opacity-0 group-hover:opacity-100 transition-all group-hover:transition group-hover:ease-in-out group-hover:duration-300 text-accent-foreground cursor-pointer"
+							icon="solar:play-bold"
 						/>
 					</Card.Header>
 					<div class="space-y-1.5 p-6">

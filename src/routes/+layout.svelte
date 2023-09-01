@@ -17,7 +17,7 @@
 	});
 </script>
 
-<nav class="sticky top-0 z-40 flex w-full flex-col border-b bg-secondary px-6">
+<nav class="sticky top-0 z-40 flex w-full flex-col border-b bg-secondary">
 	<div class="flex h-16 items-center pl-6">
 		<div class="flex items-center">
 			<a href="/" class="mr-5">AniVerse</a>
@@ -34,7 +34,7 @@
 				>
 					<Input class="max-w-[200px]" placeholder="Search..." bind:value={input} />
 				</form>
-
+				<!-- 
 				<Toggle
 					bind:pressed={dropdown}
 					on:click={handleDropdown}
@@ -43,7 +43,7 @@
 					<ChevronDown
 						class={`transition-transform duration-300 ${dropdown ? 'rotate-180' : ''}`}
 					/>
-				</Toggle>
+				</Toggle> -->
 			</div>
 		</div>
 	</div>
